@@ -6,13 +6,13 @@
 
 include $(TOPDIR)/rules.mk
 
-LUCI_TITLE:=Material Theme
+LUCI_TITLE:=LuCI OpenWrt.org theme
 LUCI_DEPENDS:=
 
-define Package/luci-theme-material/postrm
+define Package/luci-theme-openwrt/postrm
 #!/bin/sh
 [ -n "$${IPKG_INSTROOT}" ] || {
-	uci -q delete luci.themes.Material
+	uci -q delete luci.themes.OpenWrt
 	uci commit luci
 }
 endef

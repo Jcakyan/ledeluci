@@ -1,18 +1,18 @@
 #
-# Copyright (C) 2008-2014 The LuCI Team <luci@lists.subsignal.org>
+# Copyright (C) 2020 Jo-Philipp Wich <jo@mein.io>
 #
 # This is free software, licensed under the Apache License, Version 2.0 .
 #
 
 include $(TOPDIR)/rules.mk
 
-LUCI_TITLE:=Material Theme
+LUCI_TITLE:=LuCI modern OpenWrt theme
 LUCI_DEPENDS:=
 
-define Package/luci-theme-material/postrm
+define Package/luci-theme-openwrt-2020/postrm
 #!/bin/sh
 [ -n "$${IPKG_INSTROOT}" ] || {
-	uci -q delete luci.themes.Material
+	uci -q delete luci.themes.OpenWrt2020
 	uci commit luci
 }
 endef
